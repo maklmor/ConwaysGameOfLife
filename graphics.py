@@ -2,7 +2,7 @@ from conway import Conway
 from tkinter import Canvas, Tk
 
 SCALE = 100
-FRAME_LENGTH = 500 # in ms
+FRAME_LENGTH = 400 # in ms
 starting_state = [
   [1,0,1,0,1],
   [0,1,0,1,0],
@@ -14,9 +14,8 @@ starting_state = [
 class Animator:
   """Dummy class in order to preserve independence of Conway class from graphics"""
   def __init__(self, root, data_source):
-      """data_source should be a Object that posseses get_state() method"""
       self.root = root # root window
-      self.data_source = data_source
+      self.data_source = data_source # data_source should be a Object that implements get_state() method
 
   def draw(self):
     state = self.data_source.get_state()
