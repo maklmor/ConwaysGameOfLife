@@ -1,15 +1,6 @@
 from conway import Conway
 from tkinter import Canvas, Tk
-
-SCALE = 100
-FRAME_LENGTH = 400 # in ms
-starting_state = [
-  [1,0,1,0,1],
-  [0,1,0,1,0],
-  [1,0,1,0,1],
-  [0,1,0,1,0],
-  [1,0,1,0,1]
-  ]
+from config import SCALE, FRAME_LENGTH, STARTING_STATE
 
 class Animator:
   """Dummy class in order to preserve independence of Conway class from graphics"""
@@ -32,7 +23,7 @@ if __name__=="__main__":
   canvas.pack()
 
   # Main animation loop
-  conway = Conway(starting_state)
+  conway = Conway(STARTING_STATE)
   animator = Animator(root, conway)
   root.after(FRAME_LENGTH, animator.draw)
 
